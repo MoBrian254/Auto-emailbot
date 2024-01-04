@@ -1,14 +1,30 @@
-Simple Amazon web scraper using BeautifulSoup in Python.
+A basic email bot for sending an mail using the smtplib module. 
 
-This Python script uses BeautifulSoup and requests to create a simple web scraper for Amazon's best-selling electronics. 
+Description:
 
-The script sends an HTTP request to the provided Amazon URL, extracts relevant product details such as title and price, 
-and stores them in a list of dictionaries. 
+SMTP Setup: Connects to the Gmail SMTP server on port 587, performs the necessary handshake, and starts TLS encryption.
 
-Finally, the script saves the gathered data to a JSON file named 'amazon_top_selling.json'. 
-Adjustments may be necessary if Amazon's HTML structure changes.
+Reading Password: Reads the email account password from a file named 'password.txt'.
 
-First, make sure to install the required libraries:
+Login: Uses the obtained email and password to log in to the Gmail account.
 
-pip install requests beautifulsoup4
+Email Content: Defines the email subject and reads the email body from a file named 'body.txt'.
+
+Message Formatting: Constructs the email message with the specified subject and body.
+
+Sending Email: Uses the SMTP server to send the email from the specified sender ('FROM') to the specified recipient ('TO').
+
+Prints Success: Displays a success message if the email is sent successfully.
+
+Guidelines:
+
+Security: Avoid storing sensitive information like passwords in plain text files. Consider using more secure methods, such as environment variables or a configuration file with restricted access.
+
+Credentials: Replace placeholder values ('ENTER YOUR EMAIL HERE', 'ENTER PASSWORD HERE', 'FROM', 'TO') with your actual email address, password, sender, and recipient information.
+
+File Handling: Ensure that 'password.txt' and 'body.txt' exist and contain the correct information.
+
+Error Handling: Implement error-handling mechanisms to manage potential issues during the SMTP connection, login, and email sending process.
+
+Secure Access: If using this script for a production environment, consider enabling two-factor authentication and generating an application-specific password for enhanced security.
 
